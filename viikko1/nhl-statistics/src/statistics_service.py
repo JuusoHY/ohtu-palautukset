@@ -1,7 +1,4 @@
 
-
-
-
 class StatisticsService:
     def __init__(self, reader):
         self._players = reader.get_players()
@@ -22,20 +19,10 @@ class StatisticsService:
         return list(players_of_team)
 
     def top(self, how_many):
-        # metodin käyttämä apufufunktio voidaan määritellä näin
-        def sort_by_points(player):
-            return player.points
-
         sorted_players = sorted(
             self._players,
             reverse=True,
-            key=sort_by_points
+            key=lambda player: player.points
         )
 
-        result = []
-        i = 0
-        while i <= how_many:
-            result.append(sorted_players[i])
-            i += 1
-
-        return result
+        return sorted_players[:max(0, how_many)]
