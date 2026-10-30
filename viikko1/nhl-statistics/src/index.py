@@ -1,5 +1,5 @@
 
-from statistics_service import StatisticsService
+from statistics_service import StatisticsService, SortBy
 from player_reader import PlayerReader
 
 
@@ -8,17 +8,20 @@ def main():
         PlayerReader("https://studies.cs.helsinki.fi/nhlstats/2024-25/players.txt")
     )
 
-    philadelphia_flyers_players = stats.team("PHI")
-    top_scorers = stats.top(10)
-
-    print("Philadelphia Flyers:")
-    for player in philadelphia_flyers_players:
+    print("Top point getters:")
+    for player in stats.top(5, SortBy.POINTS):
         print(player)
 
-    print()
+    print("\nTop point getters (default):")
+    for player in stats.top(5):
+        print(player)
 
-    print("Top point getters:")
-    for player in top_scorers:
+    print("\nTop goal scorers:")
+    for player in stats.top(5, SortBy.GOALS):
+        print(player)
+
+    print("\nTop by assists:")
+    for player in stats.top(5, SortBy.ASSISTS):
         print(player)
 
 
