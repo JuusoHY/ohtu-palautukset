@@ -1,0 +1,16 @@
+[MAIN]
+ignore=.venv
+
+[MESSAGES CONTROL]
+disable=too-few-public-methods
+
+[FORMAT]
+max-line-length=80
+indent-string='    '
+
+[REFACTORING]
+max-nested-blocks=2
+
+[DESIGN]
+max-statements=10
+max-args=4
