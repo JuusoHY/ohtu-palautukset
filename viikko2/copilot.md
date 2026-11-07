@@ -49,19 +49,29 @@ ohjelman suorittamista.
 
 ## Agent-tilan kokeileminen
 
-Kokeilin GitHub Copilotin Agent-tilaa.
+Pyysin GitHub Copilotin Agent-tilaa toteuttamaan NHL-sovellukseen
+joukkuekohtaisen pelaajahaun ja siihen yksikkötestit.
 
-Annoin agentille tehtäväksi lisätä PlayerStats-luokkaan
-top_scorers_by_team-metodin, jonka avulla voidaan hakea
-tietyn NHL-joukkueen pelaajat pistejärjestyksessä.
+Agentti tutki projektin tiedostoja, ehdotti koodimuutoksia,
+loi stub-pohjaiset pytest-testit ja yritti ajaa tarkistukset.
+Agentin työssä tuli myös ongelmia: sama metodi näkyi
+kahteen kertaan ja VS Coden tallennusristiriita esti
+muutetun koodin tallentumisen levylle.
 
-Agentin toiminta oli kuitenkin odottamaani hitaampaa.
-En käyttänyt agentin tuottamaa koodia lopullisessa
-toteutuksessa.
+Lopullinen player_stats.py korjattiin erikseen.
+Tämän jälkeen kaikki neljä yksikkötestiä menivät läpi
+ja Pylint antoi 10/10. Joukkuehakua kokeiltiin myös
+oikeilla NHL-pelaajatiedoilla: DAL-joukkueen pelaajat
+löytyivät oikeassa pistejärjestyksessä.
 
-Kokeilu auttoi ymmärtämään Agent-tilan ideaa: agentti voi
-tutkia projektia ja tehdä siihen muutoksia itsenäisesti,
-mutta sen etenemistä ja ehdotuksia pitää seurata.
+Testit käyttävät StubPlayerReader-luokkaa eivätkä tee
+HTTP-pyyntöjä. Stub-periaate oli tuttu jo edellisen
+viikon harjoituksista. Nyt sillä testattiin myös
+pilkuilla eroteltuja joukkuekoodeja ja pistejärjestystä.
+
+Agentti oli hyödyllinen mutta ei tehnyt täysin valmista
+ratkaisua itsenäisesti. Opin, että agentin tekemät
+muutokset on aina tarkistettava ja testattava itse.
 
 ## Joukkuekohtainen pelaajahaku
 
@@ -104,3 +114,20 @@ oli tällä kertaa liian hidasta omaan työskentelyyni.
 Opin, että tekoälyn ehdottama koodi kannattaa aina
 tarkistaa. Yksikkötestit ja Pylint ovat hyödyllisiä
 työkaluja toimivuuden ja koodin laadun varmistamisessa.
+
+## Pylint-selityksen tarkistus
+
+Rikoin kokeilutiedostossa tarkoituksella projektin
+80 merkin rivipituussääntöä. Pylint ilmoitti C0301-virheestä.
+
+Pyysin Copilotin Ask-tilaa selittämään varoituksen.
+Copilot kertoi, että pitkät rivit heikentävät luettavuutta
+ja että koodirivin voi jakaa useammalle riville.
+
+Tarkistin selityksen Pylintin dokumentaatiosta.
+Selitys piti paikkansa.
+
+Kokeilutiedosto poistettiin tarkistuksen jälkeen.
+
+Dokumentaatio:
+https://pylint.readthedocs.io/en/latest/user_guide/messages/convention/line-too-long.html
