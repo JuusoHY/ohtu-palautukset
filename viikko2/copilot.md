@@ -91,22 +91,25 @@ team-kentässä on useita joukkueita.
 
 ## Yksikkötestit
 
-Uudelle toiminnallisuudelle tehtiin neljä pytest-yksikkötestiä.
+PlayerStats-luokalle tehtiin neljä pytest-yksikkötestiä.
 
-Testeissä käytetään StubPlayerReader-luokkaa, joka palauttaa
-ennalta määritellyt pelaajat ilman verkkoyhteyttä.
-
-Testeillä tarkistetaan:
+Testeissä tarkistetaan:
 - kansallisuuden perusteella hakeminen
 - joukkueen perusteella hakeminen
-- joukkueen pelaajien pistejärjestys
+- pelaajien järjestäminen pisteiden mukaan
 - useassa joukkueessa pelanneen pelaajan löytyminen
 
-Stubin käyttäminen tekee testeistä nopeita ja riippumattomia
-ulkoisen verkkopalvelun saatavuudesta.
+Testeissä käytetään StubPlayerReader-luokkaa, joka
+palauttaa valmiit Player-oliot ilman verkkoyhteyttä.
+Sama stub-periaate oli tuttu jo edelliseltä viikolta.
 
-Kaikki neljä yksikkötestiä menivät läpi.
-Pylint antoi lähdekoodille tuloksen 10/10.
+Agentti loi testit, mutta ensimmäiset testiajot
+epäonnistuivat tallennusristiriidan takia.
+Pylint löysi työvaiheessa myös dokumentointi- ja
+no-member-varoituksia. Ongelmat korjattiin.
+
+Lopuksi kaikki neljä yksikkötestiä läpäistiin,
+ja Pylint antoi tuloksen 10/10.
 
 ## Yhteenveto
 
