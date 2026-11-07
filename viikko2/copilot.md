@@ -69,6 +69,11 @@ HTTP-pyyntöjä. Stub-periaate oli tuttu jo edellisen
 viikon harjoituksista. Nyt sillä testattiin myös
 pilkuilla eroteltuja joukkuekoodeja ja pistejärjestystä.
 
+Pylint löysi agentin testien työversiosta
+dokumentointi- ja muotoiluvirheitä.
+Tallennusristiriidan aikana Pylint ilmoitti myös
+no-member-virheistä, koska se luki vanhaa lähdekoodia.
+Lopuksi ongelmat korjattiin ja Pylint antoi 10/10.
 Agentti oli hyödyllinen mutta ei tehnyt täysin valmista
 ratkaisua itsenäisesti. Opin, että agentin tekemät
 muutokset on aina tarkistettava ja testattava itse.
@@ -93,9 +98,9 @@ ennalta määritellyt pelaajat ilman verkkoyhteyttä.
 
 Testeillä tarkistetaan:
 - kansallisuuden perusteella hakeminen
-- joukkueen perusteella hakeminen ja pistejärjestys
-- pienillä kirjaimilla tehtävä joukkuehaku
-- tuntemattoman joukkueen palauttama tyhjä lista
+- joukkueen perusteella hakeminen
+- joukkueen pelaajien pistejärjestys
+- useassa joukkueessa pelanneen pelaajan löytyminen
 
 Stubin käyttäminen tekee testeistä nopeita ja riippumattomia
 ulkoisen verkkopalvelun saatavuudesta.
@@ -108,8 +113,9 @@ Pylint antoi lähdekoodille tuloksen 10/10.
 Copilotin automaattinen koodintäydennys oli hyödyllinen,
 ja Ask-tila auttoi ymmärtämään olemassa olevaa koodia.
 
-Agent-tila vaikutti kiinnostavalta, mutta sen käyttö
-oli tällä kertaa liian hidasta omaan työskentelyyni.
+Agentin ensimmäinen yritys eteni hitaasti.
+Uudella yrityksellä agentti muokkasi koodia ja testejä,
+mutta lopputulos tarvitsi vielä korjauksia.
 
 Opin, että tekoälyn ehdottama koodi kannattaa aina
 tarkistaa. Yksikkötestit ja Pylint ovat hyödyllisiä
