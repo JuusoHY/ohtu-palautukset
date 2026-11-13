@@ -47,7 +47,7 @@ class UserService:
             raise UserInputError(
                 "Password can not consist only of letters"
             )
-        if False:  # TOINEN TESTIRIKKOMINEN
+        if password != password_confirmation:
             raise UserInputError(
                 "Password and password confirmation do not match"
             )
