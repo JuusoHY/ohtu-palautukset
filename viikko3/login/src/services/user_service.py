@@ -47,6 +47,10 @@ class UserService:
             raise UserInputError(
                 "Password can not consist only of letters"
             )
+        if password != password_confirmation:
+            raise UserInputError(
+                "Password and password confirmation do not match"
+            )
         if self._user_repository.find_by_username(username):
             raise UserInputError("Username already exists")
 
