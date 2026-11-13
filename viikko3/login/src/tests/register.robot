@@ -12,6 +12,34 @@ Register With Valid Username And Password
     Click  button >> text=Register
     Register Should Succeed
 
+Register With Password That Contains Letters And Numbers
+    Set Username  uusi
+    Set Password  kalle123
+    Set Password Confirmation  kalle123
+    Click  button >> text=Register
+    Register Should Succeed
+
+Register With Password That Contains Letters And Special Character
+    Set Username  uusi
+    Set Password  kalle#abc
+    Set Password Confirmation  kalle#abc
+    Click  button >> text=Register
+    Register Should Succeed
+
+Register With Password That Contains Only Letters
+    Set Username  uusi
+    Set Password  kallekalle
+    Set Password Confirmation  kallekalle
+    Click  button >> text=Register
+    Register Should Fail With Message  Password can not consist only of letters
+
+Register With Password That Contains Only Uppercase Letters
+    Set Username  uusi
+    Set Password  KalleKalle
+    Set Password Confirmation  KalleKalle
+    Click  button >> text=Register
+    Register Should Fail With Message  Password can not consist only of letters
+
 Register With Too Short Username And Valid Password
     Set Username  ab
     Set Password  salasana123
