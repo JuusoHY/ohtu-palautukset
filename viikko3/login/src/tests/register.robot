@@ -26,6 +26,20 @@ Register With Password That Contains Letters And Special Character
     Click  button >> text=Register
     Register Should Succeed
 
+Register With Matching Password And Confirmation
+    Set Username  uusi
+    Set Password  kalle123
+    Set Password Confirmation  kalle123
+    Click  button >> text=Register
+    Register Should Succeed
+
+Register With Different Password And Confirmation
+    Set Username  uusi
+    Set Password  kalle123
+    Set Password Confirmation  kalle124
+    Click  button >> text=Register
+    Register Should Fail With Message  Password and password confirmation do not match
+
 Register With Password That Contains Only Letters
     Set Username  uusi
     Set Password  kallekalle
