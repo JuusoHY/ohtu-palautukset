@@ -43,11 +43,11 @@ class UserService:
             raise UserInputError("Username must be at least 3 characters")
         if len(password) < 8:
             raise UserInputError("Password must be at least 8 characters")
-        if False:  # TAHALLINEN TESTIRIKKOMINEN
+        if password.isalpha():
             raise UserInputError(
                 "Password can not consist only of letters"
             )
-        if password != password_confirmation:
+        if False:  # TOINEN TESTIRIKKOMINEN
             raise UserInputError(
                 "Password and password confirmation do not match"
             )
